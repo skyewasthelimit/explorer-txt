@@ -82,3 +82,43 @@
     transform: rotate(360deg);
   }
 }
+
+.text-1 {
+  color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 20px;
+  overflow: hidden;
+  border-right: .15em solid rgb(255, 255, 255);
+  white-space: nowrap;
+  animation: typing1 2s steps(20, end) forwards;
+  font-size: 20px;
+  width: 0;
+}
+
+@keyframes typing1 {
+  from { width: 0 }
+  to { width: 49% }
+}
+
+.intro-btn {
+  padding: 10px 30px;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 22px;
+  border-radius: 7%;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.intro-choices {
+  padding-top: 20px;
+  transition: 0.3s;
+}
+
+.health-bar {
+  font-size: 22px;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  padding: 2px 4px;
+  margin: 30px;
+}

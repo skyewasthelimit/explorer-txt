@@ -6,7 +6,7 @@ const Start = () => {
   const [loading, setLoading] = useState(false);
 
   const gameStart = () => {
-    window.location = '/Level1';
+    window.location = '/Intro';
   }
 
 
