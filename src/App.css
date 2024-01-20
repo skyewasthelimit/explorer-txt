@@ -116,9 +116,35 @@
 }
 
 .health-bar {
-  font-size: 22px;
+  font-size: 29px;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
-  padding: 2px 4px;
-  margin: 30px;
+  padding: 0px 4px;
+  margin-top: 30px;
+}
+
+.fa-space-awesome {
+  background-color: rgb(5, 255, 38);
+  font-size: 24px;
+  letter-spacing: 3px;
+  padding: 5px 4px;
+  margin-top: 30px; 
+  margin-left: 10px;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.credits-bar {
+  font-size: 23px;
+  font-family: monospace;
+  background-color: rgb(5, 255, 38);
+  margin-top: 30px; 
+  margin-left: 10px;
+  padding: 4px 6px 4px 6px;
+  letter-spacing: 3px;
 }

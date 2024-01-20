@@ -14,15 +14,15 @@ const Start = () => {
     setButtonVisible(false);
     if (buttonVisible === true) {
       setLoading(true);
-    } 
+    }
     setTimeout(gameStart, 5000)
   }
 
   return (
     <div className='start-wrapper'>
       <div className='start'>
-      {buttonVisible && <button id='start-btn' onClick={hideButton}>Start</button>}
-      {loading && <i class="fa fa-spinner"></i>}
+        {buttonVisible && <button id='start-btn' onClick={hideButton}>Start</button>}
+        {loading && <i class="fa fa-spinner"></i>}
       </div>
     </div>
   )
