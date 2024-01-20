@@ -60,7 +60,7 @@
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 55% }
+  to { width: 56% }
 }
 
 .fa-spinner {
@@ -97,7 +97,7 @@
 
 @keyframes typing1 {
   from { width: 0 }
-  to { width: 49% }
+  to { width: 50% }
 }
 
 .intro-btn {
@@ -108,6 +108,10 @@
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
+}
+
+.intro-btn:hover {
+  background-color: darkseagreen;
 }
 
 .intro-choices {
@@ -121,12 +125,13 @@
   font-family: monospace;
   padding: 0px 4px;
   margin-top: 30px;
+  letter-spacing: 1px;
 }
 
 .fa-space-awesome {
   background-color: rgb(5, 255, 38);
   font-size: 24px;
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   padding: 5px 4px;
   margin-top: 30px; 
   margin-left: 10px;
@@ -140,11 +145,46 @@
 }
 
 .credits-bar {
-  font-size: 23px;
+  font-size: 29px;
   font-family: monospace;
   background-color: rgb(5, 255, 38);
   margin-top: 30px; 
   margin-left: 10px;
-  padding: 4px 6px 4px 6px;
+  padding: 0px 6px 0px 6px;
   letter-spacing: 3px;
+}
+
+.ship-text1 {
+  color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 20px;
+  overflow: hidden;
+  border-right: .15em solid rgb(255, 255, 255);
+  white-space: nowrap;
+  animation: typingship1 2s steps(20, end) forwards;
+  font-size: 20px;
+  width: 0;
+}
+
+@keyframes typingship1 {
+  from { width: 0 }
+  to { width: 78% }
+}
+
+.broke-text {
+  color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 20px;
+  overflow: hidden;
+  border-right: .15em solid rgb(255, 255, 255);
+  white-space: nowrap;
+  animation: typingbroke 2s steps(20, end) forwards;
+  font-size: 20px;
+  width: 0;
+  margin-top: 30px;
+}
+
+@keyframes typingbroke {
+  from { width: 0 }
+  to { width: 52% }
 }

@@ -6,7 +6,7 @@ export const ShipProvider = ({ children }) => {
   const [ship, setShip] = useState(100);
 
   const updateShip = (amount) => {
-    setShip((prevShip) => Math.max(0, Math.min(100, prevShip + amount)));
+    setShip((prevShip) => Math.max(0, Math.min(10000, prevShip + amount)));
   };
 
   return (

@@ -27,8 +27,8 @@ const Intro = () => {
         {introtext && <div class="level-text">Greetings - and welcome to Explorer.txt</div>}
         {text1 && <div class="text-1">Please choose one of the following:</div>}
         <div className='intro-choices'>
-          {introbutton && <a href="/Ship"><button className='intro-btn'>Go to ship</button></a>}
-          {introbutton && <button className='intro-btn'>Go to station</button>}
+          {introbutton && <a href="/Ship"><button className='intro-btn'>Go to Ship</button></a>}
+          {introbutton && <button className='intro-btn'>Go to Station</button>}
           {introbutton && <button className='intro-btn'>Go Salvage</button>}
         </div>
         <div className='hud'>
