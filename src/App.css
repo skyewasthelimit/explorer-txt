@@ -108,10 +108,17 @@
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid white;
 }
 
 .intro-btn:hover {
   background-color: darkseagreen;
+}
+
+.intro-btn:active {
+  background-color: rgb(62, 82, 62);
 }
 
 .intro-choices {
