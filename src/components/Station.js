@@ -3,22 +3,22 @@ import { useHealth } from '../contexts/HealthContext';
 import { useShip } from '../contexts/ShipContext';
 import { useCredits } from '../contexts/CreditsContext';
 
-const Ship = () => {
-  const [shipintrotext, showShipIntroText] = useState(true);
+const Station = () => {
+  const [stationintrotext, showStationIntroText] = useState(true);
   const [broke, showBroke] = useState(false);
 
   const { health, updateHealth } = useHealth();
   const { ship, updateShip } = useShip();
   const { credits, updateCredits } = useCredits();
 
-  const addFuel = () => {
-    const fuelCost = 30;
-    if (credits >= fuelCost) {
-      updateShip(10);
-      updateCredits(-fuelCost);
+  const addHealth = () => {
+    const healingCost = 20;
+    if (credits >= healingCost) {
+      updateHealth(10);
+      updateCredits(-healingCost);
     } else {
       showBroke(true);
-      console.log('Not enough credits to buy fuel');
+      console.log('Not enough credits');
       setTimeout(showBroke, 5000)
     }
   };
@@ -26,10 +26,10 @@ const Ship = () => {
   return (
     <div className='start-wrapper'>
       <div className='start'>
-        {shipintrotext && <div class="ship-text1">Welcome to the ship console - Would you like to refuel?</div>}
+        {stationintrotext && <div class="station-text1">The station has an infirmary - Would you like healing?</div>}
         <div className='intro-choices'>
-          <button className='intro-btn' onClick={addFuel}>Refuel</button>
-          <a href="/Station"><button className='intro-btn'>Go to Station</button></a>
+          <button className='intro-btn' onClick={addHealth}>Heal</button>
+          <a href="/Ship"><button className='intro-btn'>Go to Ship</button></a>
           <a href="/Salvage"><button className='intro-btn'>Go Salvage</button></a>
         </div>
         <div className='hud'>
@@ -43,4 +43,4 @@ const Ship = () => {
   )
 }
 
-export default Ship
+export default Station

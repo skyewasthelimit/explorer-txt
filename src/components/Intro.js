@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHealthBar } from '../contexts/HealthBarContext';
+import { useHealth } from '../contexts/HealthContext';
 import { useShip } from '../contexts/ShipContext';
 import { useCredits } from '../contexts/CreditsContext';
 
@@ -8,9 +8,10 @@ const Intro = () => {
   const [text1, showText1] = useState(false);
   const [introbutton, showIntroButton] = useState(false)
 
-  const { health, updateHealth } = useHealthBar();
+  const { health, updateHealth } = useHealth();
   const { ship, updateShip } = useShip();
   const { credits, updateCredits } = useCredits();
+
 
   const handleShowText1 = () => {
     setTimeout(showIntroText, 5000)
@@ -28,7 +29,7 @@ const Intro = () => {
         {text1 && <div class="text-1">Please choose one of the following:</div>}
         <div className='intro-choices'>
           {introbutton && <a href="/Ship"><button className='intro-btn'>Go to Ship</button></a>}
-          {introbutton && <button className='intro-btn'>Go to Station</button>}
+          {introbutton && <a href="/Station"><button className='intro-btn'>Go to Station</button></a>}
           {introbutton && <button className='intro-btn'>Go Salvage</button>}
         </div>
         <div className='hud'>

@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
+import { useHealth } from '../contexts/HealthContext';
+import { useShip } from '../contexts/ShipContext';
+import { useCredits } from '../contexts/CreditsContext';
 
 const Start = () => {
 
   const [buttonVisible, setButtonVisible] = useState(true);
   const [loading, setLoading] = useState(false);
+  const { health, updateHealth } = useHealth();
+  const { ship, updateShip } = useShip();
+  const { credits, updateCredits } = useCredits();
 
   const gameStart = () => {
     window.location = '/Intro';
   }
-
 
   const hideButton = () => {
     setButtonVisible(false);
