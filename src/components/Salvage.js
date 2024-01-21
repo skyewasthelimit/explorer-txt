@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
+import { Link } from 'react-router-dom'
 
 
-const Component = () => {
+const Salvage = () => {
 
   const { health, updateHealth } = useHealth();
   const { fuel, updateFuel } = useFuel();
@@ -11,7 +12,11 @@ const Component = () => {
   return (
     <div className='start-wrapper'>
       <div className='start'>
-        
+        <div className='intro-choices'>
+          <Link to="/Ship" className='intro-btn'>Go to Ship</Link>
+          <Link to="/Station" className='intro-btn'>Go to Station</Link>
+        </div>
+
         <div className='hud'>
           <p className='health-bar'>Health: {health}</p>
           <i class="fa-brands fa-space-awesome">{fuel}%</i>
@@ -22,4 +27,4 @@ const Component = () => {
   )
 }
 
-export default Component
+export default Salvage
