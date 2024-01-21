@@ -11,6 +11,7 @@ const Salvage = () => {
 
   return (
     <div className='start-wrapper'>
+      <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
         <button className='intro-btn'>Begin Mission</button>
         <div className='intro-choices'>

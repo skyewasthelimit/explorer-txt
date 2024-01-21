@@ -24,6 +24,7 @@ const Ship = () => {
 
   return (
     <div className='start-wrapper'>
+      <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
         {shipintrotext && <div class="ship-text1">Welcome to the ship console - Would you like to refuel?</div>}
         <div className='intro-choices'>

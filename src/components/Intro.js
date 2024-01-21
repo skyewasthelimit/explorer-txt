@@ -22,7 +22,9 @@ const Intro = () => {
   }
 
   return (
+    
     <div className='start-wrapper' onClick={handleShowText1}>
+      <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
         {introtext && <div class="level-text">Greetings - and welcome to Explorer.txt</div>}
         {text1 && <div class="text-1">Please choose one of the following:</div>}

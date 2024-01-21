@@ -23,6 +23,7 @@ const Start = () => {
 
   return (
     <div className='start-wrapper'>
+      <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
         {buttonVisible && <button id='start-btn' onClick={hideButton}>Start</button>}
         {loading && <i class="fa fa-spinner"></i>}

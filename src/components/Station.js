@@ -24,6 +24,7 @@ const Station = () => {
 
   return (
     <div className='start-wrapper'>
+      <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
         {stationintrotext && <div class="station-text1">The station has an infirmary - Would you like healing?</div>}
         <div className='intro-choices'>

@@ -57,6 +57,15 @@
   width: 0;
 }
 
+.retro-overlay {
+  position: absolute;
+  opacity: 20%;
+  border-radius: 10%;
+  transform: scaleY(1.03);
+  filter: blur(0.2px);
+  pointer-events: none;
+}
+
 @keyframes typing {
   from { width: 0 }
   to { width: 55% }
