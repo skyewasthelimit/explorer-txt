@@ -12,6 +12,7 @@ const Salvage = () => {
   return (
     <div className='start-wrapper'>
       <div className='start'>
+        <button className='intro-btn'>Begin Mission</button>
         <div className='intro-choices'>
           <Link to="/Ship" className='intro-btn'>Go to Ship</Link>
           <Link to="/Station" className='intro-btn'>Go to Station</Link>

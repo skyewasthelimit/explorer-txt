@@ -45,19 +45,6 @@
   cursor: pointer;
 }
 
-
-.level-text{
-  color: rgb(5, 255, 38);
-  font-family: monospace;
-  font-size: 20px;
-  overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255);
-  white-space: nowrap;
-  animation: typing 2s steps(20, end) forwards;
-  font-size: 20px;
-  width: 0;
-}
-
 @keyframes typing {
   from { width: 0 }
   to { width: 56% }
@@ -133,6 +120,16 @@
   padding: 0px 4px;
   margin-top: 30px;
   letter-spacing: 1px;
+}
+
+.level {
+  font-size: 29px;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  padding: 0px 4px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  margin-right: 10px;
 }
 
 .fa-space-awesome {

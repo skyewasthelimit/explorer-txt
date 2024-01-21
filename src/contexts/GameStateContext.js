@@ -4,10 +4,11 @@ const GameStateContext = createContext();
 
 export const GameStateProvider = ({ children }) => {
 
-  const [fuel, setFuel] = useState(100);
+  const [maxfuel, setMaxFuel] = useState(100)
+  const [fuel, setFuel] = useState(maxfuel);
   const [health, setHealth] = useState(100);
   const [credits, setCredits] = useState(250);
-
+  
   const updateCredits = (amount) => {
     setCredits((prevCredits) => Math.max(0, Math.min(250,
       prevCredits + amount)));
@@ -26,7 +27,8 @@ export const GameStateProvider = ({ children }) => {
   return (
     <GameStateContext.Provider value={{
       fuel, updateFuel,
-      health, updateHealth, credits, updateCredits
+      health, updateHealth, credits, updateCredits,
+      maxfuel, setMaxFuel
     }}>
       {children}
     </GameStateContext.Provider>

@@ -11,7 +11,7 @@ const Component = () => {
   return (
     <div className='start-wrapper'>
       <div className='start'>
-        
+
         <div className='hud'>
           <p className='health-bar'>Health: {health}</p>
           <i class="fa-brands fa-space-awesome">{fuel}%</i>
