@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { useHealth } from '../contexts/HealthContext';
-import { useShip } from '../contexts/ShipContext';
-import { useCredits } from '../contexts/CreditsContext';
+import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
+import { Link } from 'react-router-dom'
 
 const Intro = () => {
   const [introtext, showIntroText] = useState(true);
@@ -9,7 +8,7 @@ const Intro = () => {
   const [introbutton, showIntroButton] = useState(false)
 
   const { health, updateHealth } = useHealth();
-  const { ship, updateShip } = useShip();
+  const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
 
 
@@ -28,13 +27,13 @@ const Intro = () => {
         {introtext && <div class="level-text">Greetings - and welcome to Explorer.txt</div>}
         {text1 && <div class="text-1">Please choose one of the following:</div>}
         <div className='intro-choices'>
-          {introbutton && <a href="/Ship"><button className='intro-btn'>Go to Ship</button></a>}
-          {introbutton && <a href="/Station"><button className='intro-btn'>Go to Station</button></a>}
+          {introbutton && <Link to="/Ship"><button className='intro-btn'>Go to Ship</button></Link>}
+          {introbutton && <Link to="/Station"><button className='intro-btn'>Go to Station</button></Link>}
           {introbutton && <button className='intro-btn'>Go Salvage</button>}
         </div>
         <div className='hud'>
           <p className='health-bar'>Health: {health}</p>
-          <i class="fa-brands fa-space-awesome">{ship}%</i>
+          <i class="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>
       </div>

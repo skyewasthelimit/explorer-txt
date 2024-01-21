@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { useHealthBar } from '../contexts/HealthContext';
-import { useShip } from '../contexts/ShipContext';
-import { useCredits } from '../contexts/CreditsContext';
+import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
 
 const Component = () => {
 
   const { health, updateHealth } = useHealth();
-  const { ship, updateShip } = useShip();
+  const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
 
   return (
@@ -15,7 +13,7 @@ const Component = () => {
         
         <div className='hud'>
           <p className='health-bar'>Health: {health}</p>
-          <i class="fa-brands fa-space-awesome">{ship}%</i>
+          <i class="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>
       </div>

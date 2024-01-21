@@ -5,17 +5,14 @@ import Intro from './components/Intro';
 import Ship from './components/Ship';
 import Station from './components/Station';
 
-import { CreditsProvider } from './contexts/CreditsContext';
-import { ShipProvider } from './contexts/ShipContext';
-import { HealthProvider } from './contexts/HealthContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { GameStateProvider } from './contexts/GameStateContext';
 
 function Explorer() {
 
   return (<Router>
-    <HealthProvider>
-      <ShipProvider>
-        <CreditsProvider>
+    
+        <GameStateProvider>
           <div className="main">
             <div>
               <Routes>
@@ -26,9 +23,7 @@ function Explorer() {
               </Routes>
             </div>
           </div>
-        </CreditsProvider>
-      </ShipProvider>
-    </HealthProvider>
+        </GameStateProvider>
   </Router>
   );
 }

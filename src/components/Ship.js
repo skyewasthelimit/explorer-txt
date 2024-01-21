@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import { useHealth } from '../contexts/HealthContext';
-import { useShip } from '../contexts/ShipContext';
-import { useCredits } from '../contexts/CreditsContext';
+import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
+import { Link } from 'react-router-dom'
 
 const Ship = () => {
   const [shipintrotext, showShipIntroText] = useState(true);
   const [broke, showBroke] = useState(false);
 
   const { health, updateHealth } = useHealth();
-  const { ship, updateShip } = useShip();
+  const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
 
   const addFuel = () => {
     const fuelCost = 30;
     if (credits >= fuelCost) {
-      updateShip(10);
+      updateFuel(10);
       updateCredits(-fuelCost);
     } else {
       showBroke(true);
@@ -29,12 +28,12 @@ const Ship = () => {
         {shipintrotext && <div class="ship-text1">Welcome to the ship console - Would you like to refuel?</div>}
         <div className='intro-choices'>
           <button className='intro-btn' onClick={addFuel}>Refuel</button>
-          <a href="/Station"><button className='intro-btn'>Go to Station</button></a>
-          <a href="/Salvage"><button className='intro-btn'>Go Salvage</button></a>
+          <Link to="/Station"><button className='intro-btn'>Go to Station</button></Link>
+          <Link to="/Salvage"><button className='intro-btn'>Go Salvage</button></Link>
         </div>
         <div className='hud'>
           <p className='health-bar'>Health: {health}</p>
-          <i class="fa-brands fa-space-awesome">{ship}%</i>
+          <i class="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>
         {broke && <div class="broke-text">Not enough credits - Come back later.</div>}

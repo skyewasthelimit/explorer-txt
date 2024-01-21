@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { useHealth } from '../contexts/HealthContext';
-import { useShip } from '../contexts/ShipContext';
-import { useCredits } from '../contexts/CreditsContext';
+import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
+import { Link } from 'react-router-dom'
 
 const Station = () => {
   const [stationintrotext, showStationIntroText] = useState(true);
   const [broke, showBroke] = useState(false);
 
   const { health, updateHealth } = useHealth();
-  const { ship, updateShip } = useShip();
+  const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
 
   const addHealth = () => {
@@ -29,12 +28,12 @@ const Station = () => {
         {stationintrotext && <div class="station-text1">The station has an infirmary - Would you like healing?</div>}
         <div className='intro-choices'>
           <button className='intro-btn' onClick={addHealth}>Heal</button>
-          <a href="/Ship"><button className='intro-btn'>Go to Ship</button></a>
-          <a href="/Salvage"><button className='intro-btn'>Go Salvage</button></a>
+          <Link to="/Ship"><button className='intro-btn'>Go to Ship</button></Link>
+          <Link to="/Salvage"><button className='intro-btn'>Go Salvage</button></Link>
         </div>
         <div className='hud'>
           <p className='health-bar'>Health: {health}</p>
-          <i class="fa-brands fa-space-awesome">{ship}%</i>
+          <i class="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>
         {broke && <div class="broke-text">Not enough credits - Come back later.</div>}

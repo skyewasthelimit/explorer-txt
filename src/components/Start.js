@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { useHealth } from '../contexts/HealthContext';
-import { useShip } from '../contexts/ShipContext';
-import { useCredits } from '../contexts/CreditsContext';
+import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
 
 const Start = () => {
 
   const [buttonVisible, setButtonVisible] = useState(true);
   const [loading, setLoading] = useState(false);
   const { health, updateHealth } = useHealth();
-  const { ship, updateShip } = useShip();
+  const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
 
   const gameStart = () => {
