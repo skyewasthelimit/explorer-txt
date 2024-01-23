@@ -1,10 +1,11 @@
 import './App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Start from './components/Start';
 import Intro from './components/Intro';
 import Ship from './components/Ship';
 import Station from './components/Station';
 import Salvage from './components/Salvage';
+import Mission from './components/Mission';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { GameStateProvider } from './contexts/GameStateContext';
@@ -22,6 +23,7 @@ function Explorer() {
                 <Route path="/Ship" element={<Ship />} />
                 <Route path="/Station" element={<Station />} />
                 <Route path="/Salvage" element={<Salvage />} />
+                <Route path="/Mission" element={<Mission />} />
               </Routes>
             </div>
           </div>

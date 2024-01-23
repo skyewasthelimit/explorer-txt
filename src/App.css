@@ -45,12 +45,12 @@
   cursor: pointer;
 }
 
-.level-text{
+.level-text {
   color: rgb(5, 255, 38);
   font-family: monospace;
   font-size: 20px;
   overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255);
+  border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
   animation: typing 2s steps(20, end) forwards;
   font-size: 20px;
@@ -59,7 +59,7 @@
 
 .retro-overlay {
   position: absolute;
-  opacity: 20%;
+  opacity: 50%;
   border-radius: 10%;
   transform: scaleY(1.03);
   filter: blur(0.2px);
@@ -67,8 +67,13 @@
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 55% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 56%
+  }
 }
 
 .fa-spinner {
@@ -84,6 +89,7 @@
     -moz-transform: rotate(0);
     transform: rotate(0);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -96,7 +102,7 @@
   font-family: monospace;
   font-size: 20px;
   overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255);
+  border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
   animation: typing1 2s steps(20, end) forwards;
   font-size: 20px;
@@ -104,8 +110,13 @@
 }
 
 @keyframes typing1 {
-  from { width: 0 }
-  to { width: 50% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 50%
+  }
 }
 
 .intro-btn {
@@ -127,6 +138,61 @@
 
 .intro-btn:active {
   background-color: rgb(62, 82, 62);
+}
+
+.mission-btn {
+  padding: 10px 30px;
+  background-color: rgb(248, 235, 44);
+  font-family: monospace;
+  font-size: 22px;
+  border-radius: 7%;
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid white;
+}
+
+.mission-btn:hover {
+  background-color: rgb(228, 20, 20);
+}
+
+.intro-btn:active {
+  background-color: rgb(62, 82, 62);
+}
+
+.mission-confirm-btn1 {
+  padding: 10px 30px;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 22px;
+  border-radius: 7%;
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid white;
+}
+
+.mission-confirm-btn1:hover {
+  background-color: rgb(62, 82, 62);
+}
+
+.mission-confirm-btn2 {
+  padding: 10px 30px;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 22px;
+  border-radius: 7%;
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid white;
+}
+
+.mission-confirm-btn2:hover {
+  background-color: rgb(228, 20, 20);
 }
 
 .intro-choices {
@@ -158,7 +224,7 @@
   font-size: 24px;
   letter-spacing: 5px;
   padding: 5px 4px;
-  margin-top: 30px; 
+  margin-top: 30px;
   margin-left: 10px;
 }
 
@@ -173,7 +239,7 @@
   font-size: 29px;
   font-family: monospace;
   background-color: rgb(5, 255, 38);
-  margin-top: 30px; 
+  margin-top: 30px;
   margin-left: 10px;
   padding: 0px 6px 0px 6px;
   letter-spacing: 3px;
@@ -184,16 +250,22 @@
   font-family: monospace;
   font-size: 20px;
   overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255);
+  border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
   animation: typingship1 2s steps(20, end) forwards;
   font-size: 20px;
+  margin-top: 30px;
   width: 0;
 }
 
 @keyframes typingship1 {
-  from { width: 0 }
-  to { width: 78% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 78%
+  }
 }
 
 .broke-text {
@@ -201,7 +273,7 @@
   font-family: monospace;
   font-size: 20px;
   overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255);
+  border-right: .55em solid rgb(5, 255, 38);
   white-space: nowrap;
   animation: typingbroke 2s steps(20, end) forwards;
   font-size: 20px;
@@ -210,8 +282,13 @@
 }
 
 @keyframes typingbroke {
-  from { width: 0 }
-  to { width: 52% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 53%
+  }
 }
 
 .station-text1 {
@@ -219,7 +296,7 @@
   font-family: monospace;
   font-size: 20px;
   overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255);
+  border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
   animation: typingstation 2s steps(20, end) forwards;
   font-size: 20px;
@@ -228,6 +305,116 @@
 }
 
 @keyframes typingstation {
-  from { width: 0 }
-  to { width: 75% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 77%
+  }
+}
+
+.mission-confirm-text {
+  color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 20px;
+  overflow: hidden;
+  border-right: .65em solid rgb(5, 255, 38);
+  white-space: nowrap;
+  animation: typingmission 2s steps(20, end) forwards;
+  font-size: 20px;
+  width: 0;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+@keyframes typingmission {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 67%
+  }
+}
+
+.hud-mission {
+  position: absolute;
+  top: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.mission-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.planet {
+  position: absolute;
+  right: 50px;
+  height: 250px;
+  width: 260px;
+  background-color: rgb(5, 255, 38);
+  border-radius: 50%;
+  display: flex;
+}
+
+.ship {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid rgb(5, 255, 38);
+  margin-right: 600px;
+  animation: shipflight 15s
+}
+
+@keyframes shipflight {
+  0% {
+    margin-right: 600px
+  }
+
+  50% {
+    margin-right: -500px;
+  }
+
+  100% {
+    margin-right: 600px;
+    transform: scaleX(-1);
+  }
+}
+
+.mission-begin {
+  padding: 10px 30px;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 22px;
+  border-radius: 7%;
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid white;
+}
+
+.mission-results-btn {
+  padding: 100px;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 22px;
+  border-radius: 7%;
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid white;
+  opacity: 80%;
 }

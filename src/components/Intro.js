@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
 import { Link } from 'react-router-dom'
+// import theme from "./sounds/explorer_mission_theme.mp3";
+
 
 const Intro = () => {
   const [introtext, showIntroText] = useState(true);
@@ -11,13 +13,17 @@ const Intro = () => {
   const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
 
+  // const playMusic = () => {
+    // new Audio(theme).play()
+    // Audio.loop = true;
+  // };
 
   const handleShowText1 = () => {
     setTimeout(showIntroText, 5000)
     showIntroText(false)
     showText1(true)
     if (text1 === true) {
-      showIntroButton(true)
+      showIntroButton(true);
     }
   }
 
