@@ -6,6 +6,8 @@ import Ship from './components/Ship';
 import Station from './components/Station';
 import Salvage from './components/Salvage';
 import Mission from './components/Mission';
+import MissionResults from './components/MissionResults'
+import MainMenu from './components/MainMenu';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { GameStateProvider } from './contexts/GameStateContext';
@@ -24,6 +26,8 @@ function Explorer() {
                 <Route path="/Station" element={<Station />} />
                 <Route path="/Salvage" element={<Salvage />} />
                 <Route path="/Mission" element={<Mission />} />
+                <Route path="/MissionResults" element={<MissionResults />} />
+                <Route path="/MainMenu" element={<MainMenu />} />
               </Routes>
             </div>
           </div>

@@ -17,7 +17,7 @@ const Mission = () => {
     setShowLaunch(false);
 
     setTimeout(() => {
-      showMissionOver(false); // Optionally hide the missionOver content after a certain time
+      showMissionOver(false);
       showResults(true);
     }, 14500);
   }
@@ -30,7 +30,7 @@ const Mission = () => {
       <div className='mission-container'>
         {missionover && <div className='ship'></div>}
         {missionover && <div className='planet'></div>}
-        {results && <Link className='mission-results-btn'>Mission Results</Link>}
+        {results && <Link to="/MissionResults" className='mission-results-btn'>Mission Results</Link>}
       </div>
         <div className='hud-mission'>
           <p className='health-bar'>Health: {health}</p>
