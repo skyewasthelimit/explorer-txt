@@ -18,16 +18,20 @@
   }
 
   .intro-choices {
-    display: flex;
+    display: flex !important;
     flex-direction: column !important;
   }
 
-  .level-text {
+  .level-text, .text-1, .menu-text, .mission-confirm-text,
+  .ship-text1, .station-text1 {
+    display: flex !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
     border-right: none !important;
-  }
-
-  .text-1 {
-    border-right: none !important;
+    white-space: normal !important;
+    margin-left: 20px !important;
+    margin-right: 10px !important;
+    width: 100vw !important;
   }
 }
 
@@ -35,6 +39,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .main {
