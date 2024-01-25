@@ -7,23 +7,42 @@
   }
 
   .start-wrapper {
+    margin-top: 30px;
     justify-content: flex-start !important;
     align-items: center !important;
     flex-direction: column !important;
   }
 
+
   .hud {
     flex-direction: column !important;
-    overflow: hidden !important;
+    margin: 0px !important;
+    gap: 0px !important;
+    padding: 0px !important;
+  }
+
+  .hud-mission {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column !important;
+    top: 26rem !important;
   }
 
   .intro-choices {
     display: flex !important;
     flex-direction: column !important;
+    text-align: center !important;
+    margin: 2px !important;
   }
 
-  .level-text, .text-1, .menu-text, .mission-confirm-text,
-  .ship-text1, .station-text1 {
+  .level-text,
+  .text-1,
+  .menu-text,
+  .mission-confirm-text,
+  .ship-text1,
+  .station-text1 {
     display: flex !important;
     justify-content: center !important;
     font-size: 1rem !important;
@@ -33,13 +52,29 @@
     margin-right: 10px !important;
     width: 100vw !important;
   }
+
+  .mission-results-box {
+    height: 32vh !important;
+    width: 70vw !important;
+    font-size: 1.2rem !important;
+    gap: 3px !important;
+  }
+
+  .intro-btn {
+    margin: 4px !important;
+  }
+
+  .health-bar,
+  .credits-bar,
+  .fa-space-awesome {
+    margin-top: 10px !important
+  }
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 .main {
@@ -75,7 +110,7 @@
 }
 
 #start-btn {
-  padding: 10px 30px;
+  padding: 0.625rem 1.875rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
   font-size: 22px;
@@ -86,7 +121,7 @@
 .level-text {
   color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 20px;
+  font-size: 1.25rem;
   overflow: hidden;
   border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
@@ -97,7 +132,7 @@
 
 .retro-overlay {
   position: absolute;
-  opacity: 50%;
+  opacity: 45%;
   border-radius: 10%;
   transform: scaleY(1.03);
   filter: blur(0.2px);
@@ -138,7 +173,7 @@
 .text-1 {
   color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 20px;
+  font-size: 1.25rem;
   overflow: hidden;
   border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
@@ -158,10 +193,10 @@
 }
 
 .intro-btn {
-  padding: 10px 30px;
+  padding: 0.625rem 1.875rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 22px;
+  font-size: 1.375rem;
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
@@ -179,10 +214,10 @@
 }
 
 .mission-btn {
-  padding: 10px 30px;
+  padding: 0.625rem 1.875rem;
   background-color: rgb(248, 235, 44);
   font-family: monospace;
-  font-size: 22px;
+  font-size: 1.5rem;
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
@@ -200,10 +235,10 @@
 }
 
 .mission-confirm-btn1 {
-  padding: 10px 30px;
+  padding: 0.625rem 1.875rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 22px;
+  font-size: 1.375rem;
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
@@ -217,10 +252,10 @@
 }
 
 .mission-confirm-btn2 {
-  padding: 10px 30px;
+  padding: 0.625rem 1.875rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 22px;
+  font-size: 1.375rem;
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
@@ -234,24 +269,24 @@
 }
 
 .intro-choices {
-  padding-top: 20px;
+  padding-top: 1.25rem;
   transition: 0.3s;
 }
 
 .health-bar {
-  font-size: 29px;
+  font-size: 1.8rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
-  padding: 0px 4px;
+  padding: 0rem 0.25rem;
   margin-top: 30px;
   letter-spacing: 1px;
 }
 
 .level {
-  font-size: 29px;
+  font-size: 1.8rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
-  padding: 0px 4px;
+  padding: 0rem 0.25rem;
   margin-top: 30px;
   letter-spacing: 1px;
   margin-right: 10px;
@@ -273,7 +308,7 @@
 }
 
 .credits-bar {
-  font-size: 29px;
+  font-size: 1.813rem;
   font-family: monospace;
   background-color: rgb(5, 255, 38);
   margin-top: 30px;
@@ -331,12 +366,11 @@
 .station-text1 {
   color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 20px;
+  font-size: 1.25rem;
   overflow: hidden;
   border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
   animation: typingstation 2s steps(20, end) forwards;
-  font-size: 20px;
   width: 0;
   margin-top: 30px;
 }
@@ -354,12 +388,11 @@
 .mission-confirm-text {
   color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 20px;
+  font-size: 1.25rem;
   overflow: hidden;
   border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
   animation: typingmission 2s steps(20, end) forwards;
-  font-size: 20px;
   width: 0;
   margin-top: 30px;
   margin-bottom: 12px;
@@ -378,12 +411,11 @@
 .menu-text {
   color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 20px;
+  font-size: 1.25rem;
   overflow: hidden;
   border-right: .65em solid rgb(5, 255, 38);
   white-space: nowrap;
   animation: typingmenu 2s steps(20, end) forwards;
-  font-size: 20px;
   width: 0;
   margin-top: 30px;
 }
@@ -400,7 +432,7 @@
 
 .hud-mission {
   position: absolute;
-  top: 480px;
+  top: 30rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -418,9 +450,9 @@
 
 .planet {
   position: absolute;
-  right: 50px;
-  height: 250px;
-  width: 260px;
+  right: 3.125rem;
+  height: 15.625rem;
+  width: 16.25rem;
   background-color: rgb(5, 255, 38);
   border-radius: 50%;
   display: flex;
@@ -430,9 +462,9 @@
   position: relative;
   width: 0;
   height: 0;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-left: 12px solid rgb(5, 255, 38);
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid transparent;
+  border-left: 0.75rem solid rgb(5, 255, 38);
   margin-right: 600px;
   animation: shipflight 15s
 }
@@ -453,10 +485,10 @@
 }
 
 .mission-begin {
-  padding: 10px 30px;
+  padding: 0.625rem 1.875rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 22px;
+  font-size: 1.375rem;
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
@@ -466,10 +498,10 @@
 }
 
 .mission-results-btn {
-  padding: 100px;
+  padding: 5.5rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
-  font-size: 22px;
+  font-size: 1.375rem;
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
@@ -487,7 +519,7 @@
   height: 21.875rem;
   width: 37.5rem;
   font-family: monospace;
-  font-size: 22px;
+  font-size: 1.375rem;
   border-radius: 7%;
   margin: 10px;
   color: black;
@@ -503,7 +535,7 @@
 .results-number {
   background-color: black;
   color: rgb(5, 255, 38);
-  padding: 0px 4px 0px 4px;
+  padding: 0rem 0.25rem 0rem 0.25rem;
   display: flex;
   margin-right: 30px;
 }
