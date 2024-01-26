@@ -44,7 +44,7 @@ const Mission = () => {
         </div>
         <div className='hud-mission'>
           <p className='health-bar'>✚Health: {health}</p>
-          <i class="fa-brands fa-space-awesome">{fuel}%</i>
+          <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>
       </div>

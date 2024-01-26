@@ -37,7 +37,7 @@ const Salvage = () => {
         src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
 
-        {confirmtext && <div class="mission-confirm-text">
+        {confirmtext && <div className="mission-confirm-text">
           Are you sure you wish to begin salvage mission?</div>}
         {confirmbutton && <Link to="/Mission"
           className='mission-confirm-btn1'>Yes</Link>}
@@ -54,7 +54,7 @@ const Salvage = () => {
 
         <div className='hud'>
           <p className='health-bar'>✚Health: {health}</p>
-          <i class="fa-brands fa-space-awesome">{fuel}%</i>
+          <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>
       </div>
