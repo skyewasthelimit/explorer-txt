@@ -33,7 +33,7 @@ const Station = () => {
           <Link to="/Salvage" className='intro-btn'>Go Salvage</Link>
         </div>
         <div className='hud'>
-          <p className='health-bar'>Health: {health}</p>
+          <p className='health-bar'>✚Health: {health}</p>
           <i class="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>

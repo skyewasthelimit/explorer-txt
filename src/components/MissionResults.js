@@ -21,7 +21,7 @@ const MissionResults = () => {
           </div>
           <Link to="/MainMenu" className='intro-btn'>Return</Link>
         <div className='hud'>
-          <p className='health-bar'>Health: {health}</p>
+          <p className='health-bar'>✚Health: {health}</p>
           <i class="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>
