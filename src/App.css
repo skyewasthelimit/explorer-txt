@@ -539,3 +539,17 @@
   display: flex;
   margin-right: 30px;
 }
+
+.mission-name-text {
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 78vw;
+  font-family: monospace;
+  font-size: 0.875rem;
+  border-radius: 7%;
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+  color: rgb(5, 255, 38);
+  opacity: 80%;
+}
