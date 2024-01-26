@@ -1,3 +1,8 @@
+# Explorer.txt 
+
+A space salvaging game based in the Aliens universe. Survive as long as you can against the odds
+and make as much money as you can! Game will later use Twitch / Stream API to incorporate new features.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
