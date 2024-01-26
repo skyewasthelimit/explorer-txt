@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import { PLANETS } from '../constants/planets';
 
 const GameStateContext = createContext();
 
@@ -8,6 +9,7 @@ export const GameStateProvider = ({ children }) => {
   const [fuel, setFuel] = useState(maxfuel);
   const [health, setHealth] = useState(100);
   const [credits, setCredits] = useState(250);
+  const [planet, setCurrentPlanet] = useState(null)
   
   const updateCredits = (amount) => {
     setCredits((prevCredits) => Math.max(0, Math.min(250,
@@ -24,11 +26,15 @@ export const GameStateProvider = ({ children }) => {
        prevFuel + amount)));
   };
 
+  const updatePlanet = () => {
+    setCurrentPlanet(Math.floor(Math.random() * 9));
+};
+
   return (
     <GameStateContext.Provider value={{
       fuel, updateFuel,
       health, updateHealth, credits, updateCredits,
-      maxfuel, setMaxFuel
+      maxfuel, setMaxFuel, updatePlanet, planet
     }}>
       {children}
     </GameStateContext.Provider>
@@ -55,6 +61,14 @@ export const useHealth = () => {
   const context = useContext(GameStateContext);
   if (!context) {
     throw new Error('useHealth must be used within a HealthProvider');
+  }
+  return context;
+};
+
+export const usePlanet = () => {
+  const context = useContext(GameStateContext);
+  if (!context) {
+    throw new Error('usePlanet must be used within a PlanetProvider');
   }
   return context;
 };

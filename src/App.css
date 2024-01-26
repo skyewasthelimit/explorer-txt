@@ -53,6 +53,15 @@
     width: 100vw !important;
   }
 
+  .mission-name-text {
+    width: 90vw !important;
+    font-size: 0.82rem !important;
+  }
+
+  .planet-name-text {
+    font-size: 1.4rem !important;
+  }
+
   .mission-results-box {
     height: 32vh !important;
     width: 70vw !important;
@@ -145,7 +154,7 @@
   }
 
   to {
-    width: 56%
+    width: 57%
   }
 }
 
@@ -188,7 +197,7 @@
   }
 
   to {
-    width: 50%
+    width: 51%
   }
 }
 
@@ -336,7 +345,7 @@
   }
 
   to {
-    width: 78%
+    width: 79%
   }
 }
 
@@ -359,7 +368,7 @@
   }
 
   to {
-    width: 53%
+    width: 54%
   }
 }
 
@@ -381,7 +390,7 @@
   }
 
   to {
-    width: 77%
+    width: 78%
   }
 }
 
@@ -404,7 +413,7 @@
   }
 
   to {
-    width: 67%
+    width: 68%
   }
 }
 
@@ -543,13 +552,39 @@
 .mission-name-text {
   margin-left: 200px;
   margin-right: 200px;
-  width: 78vw;
+  width: 80%;
   font-family: monospace;
-  font-size: 0.875rem;
+  font-size: 1.1rem;
   border-radius: 7%;
   cursor: pointer;
   margin: 10px;
   text-decoration: none;
   color: rgb(5, 255, 38);
   opacity: 80%;
+}
+
+.planet-name-text {
+    display: flex;
+    justify-content: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    width: 70vw;
+    font-family: monospace;
+    font-size: 1.875rem;
+    border-radius: 7%;
+    cursor: pointer;
+    margin: 10px;
+    text-decoration: none;
+    color: rgb(5, 255, 38);
+    opacity: 80%;
+}
+
+.mission-briefing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  margin-bottom: auto;
 }
