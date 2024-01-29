@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
+import React, { useState, useEffect } from 'react'
+import { useHealth, useCredits, useFuel, usePlanet } from '../contexts/GameStateContext';
 import { Link } from 'react-router-dom'
 import { PLANETS } from '../constants/planets';
 
@@ -14,14 +14,14 @@ const Salvage = () => {
   const { health, updateHealth } = useHealth();
   const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
-
-  // const randomplanet = Math.floor(Math.random() * 9);
+  const { planet, updatePlanet } = usePlanet();
 
   const confirmMission = () => {
     showMissionButtons(false);
     showConfirmText(true);
     showConfirmButton(true);
     showMissionDescription(true);
+    updatePlanet([planet]);
   }
 
   const denyMission = () => {
@@ -37,8 +37,7 @@ const Salvage = () => {
         src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
 
-        {missiondescription && <div className='mission-name-text'></div>}
-        {confirmtext && <div class="mission-confirm-text">
+        {confirmtext && <div className="mission-confirm-text">
           Are you sure you wish to begin salvage mission?</div>}
         {confirmbutton && <Link to="/Mission"
           className='mission-confirm-btn1'>Yes</Link>}
@@ -55,7 +54,7 @@ const Salvage = () => {
 
         <div className='hud'>
           <p className='health-bar'>✚Health: {health}</p>
-          <i class="fa-brands fa-space-awesome">{fuel}%</i>
+          <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
         </div>
       </div>
