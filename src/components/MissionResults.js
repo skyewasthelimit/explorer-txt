@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useHealth, useCredits, useFuel, usePlanet } from '../contexts/GameStateContext';
+import { useHealth, useCredits, useFuel, usePlanet, useSalvageItems } from '../contexts/GameStateContext';
 import { Link } from 'react-router-dom'
 import { PLANETS } from '../constants/planets';
 import { SALVAGE_ITEMS } from '../constants/salvageItems';
 
 const MissionResults = () => {
-  const [salvageItems, showSalvageItems] = useState(true)
+  const [salvageItemsList, showSalvageItemsList] = useState(true)
   const [results, showResults] = useState(false)
   const [returnbutton, showReturnButton] = useState(false)
   const [next, showNext] = useState(true)
@@ -14,6 +14,7 @@ const MissionResults = () => {
   const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
   const { planet, updatePlanet } = usePlanet();
+  const { salvageItems, selectRandomSalvageItems } = useSalvageItems();
 
   const consumeFuel = () => {
     console.log(fuelUsed)
@@ -24,7 +25,7 @@ const MissionResults = () => {
 
   const handleShowResults = () => {
     consumeFuel();
-    showSalvageItems(false);
+    showSalvageItemsList(false);
     showResults(true);
     showNext(false);
     showReturnButton(true);
@@ -37,11 +38,26 @@ const MissionResults = () => {
       <div className='start'>
         <div className='mission-results-box'>
           {
-            salvageItems &&
+            salvageItemsList &&
             <div className='salvage-items-result'>
               On your mission you found:
-              <div></div>
-              <div></div>
+              {
+              salvageItemsList && <div className='salvaged-items'>
+                {salvageItems[0].name}
+              </div>
+              }
+                {
+                salvageItems[1] && (
+              <div className='salvaged-items'>
+                {salvageItems[1].name}
+              </div>
+            )}
+             {
+             salvageItems[2] && (
+              <div className='salvaged-items'>
+                {salvageItems[2].name}
+              </div>
+            )}
             </div>
           }
           {
@@ -52,7 +68,7 @@ const MissionResults = () => {
           {
             results &&
             <div className='result-text'>Salvage Items Found:
-              <span className='results-number'>99</span>
+              <span className='results-number'>{salvageItems.length}</span>
             </div>
           }
           {
@@ -70,8 +86,8 @@ const MissionResults = () => {
           {
             results &&
             <div className='result-text'>Distance travelled:
-              <span className='results-number'>{PLANETS[planet].distance} 
-              &nbsp;Light Years</span>
+              <span className='results-number'>{PLANETS[planet].distance}
+                &nbsp;Light Years</span>
             </div>
           }
           {
