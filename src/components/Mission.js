@@ -27,6 +27,7 @@ const Mission = () => {
       showResults(true);
     }, 0);
   }
+  // 14500 FOR TIMER '0' ^ (skip added for debugging)
 
   return (
     <div className='start-wrapper'>

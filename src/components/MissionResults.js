@@ -24,9 +24,12 @@ const MissionResults = () => {
     console.log(fuelUsed)
     updateFuel(-fuelUsed)
     updateCredits(payment)
+    updateHealth(-healthDamage)
   }
 
-  const fuelUsed = Math.round(PLANETS[planet].distance / 8);
+  const fuelUsed = Math.round(PLANETS[planet].distance / 8) * Math.random(Math.floor() * 1.2);
+
+  const healthDamage = Math.round(PLANETS[planet].hazardLevel / 8 ) * Math.random(Math.floor() * 1.5)
 
   const handleShowResults = () => {
     consumeFuel();
@@ -75,7 +78,7 @@ const MissionResults = () => {
           {
             results &&
             <div className='result-text'>Damage taken:
-              <span className='results-number'>99</span>
+              <span className='results-number'>{healthDamage}</span>
             </div>
           }
           {
