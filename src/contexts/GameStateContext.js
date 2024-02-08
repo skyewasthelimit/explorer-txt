@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import { PLANETS } from '../constants/planets';
+import { SALVAGE_ITEMS } from '../constants/salvageItems';
 
 const GameStateContext = createContext();
 
@@ -9,7 +10,8 @@ export const GameStateProvider = ({ children }) => {
   const [fuel, setFuel] = useState(maxfuel);
   const [health, setHealth] = useState(100);
   const [credits, setCredits] = useState(250);
-  const [planet, setCurrentPlanet] = useState(null)
+  const [planet, setCurrentPlanet] = useState(null);
+  const [salvageItems, setSalvageItems] = useState(null);
   
   const updateCredits = (amount) => {
     setCredits((prevCredits) => Math.max(0, Math.min(250,
@@ -30,11 +32,20 @@ export const GameStateProvider = ({ children }) => {
     setCurrentPlanet(Math.floor(Math.random() * 9));
 };
 
+  const selectRandomSalvageItems = () => {
+    const numberOfItems = Math.floor(Math.random() * 3)
+    const randomItems = SALVAGE_ITEMS.sort(() => 0.5 - Math.random())
+    setSalvageItems(randomItems.slice(0, numberOfItems + 1))
+  };
+
   return (
     <GameStateContext.Provider value={{
       fuel, updateFuel,
-      health, updateHealth, credits, updateCredits,
-      maxfuel, setMaxFuel, updatePlanet, planet
+      health, updateHealth, 
+      credits, updateCredits,
+      maxfuel, setMaxFuel, 
+      updatePlanet, planet, 
+      salvageItems, selectRandomSalvageItems
     }}>
       {children}
     </GameStateContext.Provider>
@@ -69,6 +80,14 @@ export const usePlanet = () => {
   const context = useContext(GameStateContext);
   if (!context) {
     throw new Error('usePlanet must be used within a PlanetProvider');
+  }
+  return context;
+};
+
+export const useSalvageItems = () => {
+  const context = useContext(GameStateContext);
+  if (!context) {
+    throw new Error('useSalvageItem must be used within a SalvageProvider');
   }
   return context;
 };

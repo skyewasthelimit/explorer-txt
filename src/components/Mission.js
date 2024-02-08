@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { useHealth, useCredits, useFuel, usePlanet } from '../contexts/GameStateContext';
+import { useHealth, useCredits, useFuel, usePlanet, useSalvageItems } from '../contexts/GameStateContext';
 import { Link } from 'react-router-dom'
 import { PLANETS } from '../constants/planets';
 
 const Mission = () => {
 
-  const [currentPlanet, setCurrentPlanet] = useState(null)
   const [launch, setShowLaunch] = useState(true);
   const [missionover, showMissionOver] = useState(false);
   const [results, showResults] = useState(false);
@@ -14,11 +13,14 @@ const Mission = () => {
   const { fuel, updateFuel } = useFuel();
   const { credits, updateCredits } = useCredits();
   const { planet, updatePlanet } = usePlanet();
+  const { salvageItems, selectRandomSalvageItems } = useSalvageItems();
 
 
   const startLaunch = () => {
     showMissionOver(true);
     setShowLaunch(false);
+    selectRandomSalvageItems();
+
 
     setTimeout(() => {
       showMissionOver(false);
@@ -30,13 +32,15 @@ const Mission = () => {
     <div className='start-wrapper'>
       <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
-      {launch && <div className='mission-begin' onClick={startLaunch}>LAUNCH</div>}
+     
       {launch && <div className='mission-briefing-container'>
           {launch && <div className='planet-name-text'>Planet: {PLANETS[planet].name}</div>}
           {launch && <div className='planet-name-text'>Hazard Lvl: {PLANETS[planet].hazardLevel}</div>}
           {launch && <div className='planet-name-text'>Distance: {PLANETS[planet].distance} Light Years</div>}
           {launch && <div className='mission-name-text'>{PLANETS[planet].description}</div>}
+          {launch && <div className='mission-begin' onClick={startLaunch}>LAUNCH</div>}
         </div> }
+
         <div className='mission-container'>
           {missionover && <div className='ship'></div>}
           {missionover && <div className='planet'></div>}
