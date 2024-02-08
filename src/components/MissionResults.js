@@ -27,9 +27,9 @@ const MissionResults = () => {
     updateHealth(-healthDamage)
   }
 
-  const fuelUsed = Math.round(PLANETS[planet].distance / 8) * Math.random(Math.floor() * 1.2);
+  const fuelUsed = Math.round(Math.round(PLANETS[planet].distance / 8) + Math.random(Math.floor() * 6));
 
-  const healthDamage = Math.round(PLANETS[planet].hazardLevel / 8 ) * Math.random(Math.floor() * 1.5)
+  const healthDamage = Math.round(Math.round(PLANETS[planet].hazardLevel / 8 ) + Math.random(Math.floor() * 8))
 
   const handleShowResults = () => {
     consumeFuel();
