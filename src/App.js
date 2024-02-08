@@ -11,6 +11,7 @@ import MainMenu from './components/MainMenu';
 import GameOverDied from './components/GameOverDied';
 import GameOverFuel from './components/GameOverFuel';
 
+import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { GameStateProvider } from './contexts/GameStateContext';
 
