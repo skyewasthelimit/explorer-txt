@@ -14,18 +14,18 @@ export const GameStateProvider = ({ children }) => {
   const [salvageItems, setSalvageItems] = useState(null);
   
   const updateCredits = (amount) => {
-    setCredits((prevCredits) => Math.max(0, Math.min(250,
-      prevCredits + amount)));
+    setCredits((prevCredits) => (
+      prevCredits + amount));
   };
 
   const updateHealth = (amount) => {
-    setHealth((prevHealth) => Math.max(0, Math.min(10000,
-       prevHealth + amount)));
+    setHealth((prevHealth) => (
+       prevHealth + amount));
   };
 
   const updateFuel = (amount) => {
-    setFuel((prevFuel) => Math.max(0, Math.min(10000,
-       prevFuel + amount)));
+    setFuel((prevFuel) => (
+       prevFuel + amount));
   };
 
   const updatePlanet = () => {

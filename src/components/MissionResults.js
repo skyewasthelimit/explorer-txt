@@ -16,9 +16,14 @@ const MissionResults = () => {
   const { planet, updatePlanet } = usePlanet();
   const { salvageItems, selectRandomSalvageItems } = useSalvageItems();
 
+  const payment = salvageItems.map((item) => {
+    return item.value
+  }).reduce((previous, current) => previous + current)
+
   const consumeFuel = () => {
     console.log(fuelUsed)
     updateFuel(-fuelUsed)
+    updateCredits(payment)
   }
 
   const fuelUsed = Math.round(PLANETS[planet].distance / 8);
@@ -42,22 +47,12 @@ const MissionResults = () => {
             <div className='salvage-items-result'>
               On your mission you found:
               {
-              salvageItemsList && <div className='salvaged-items'>
-                {salvageItems[0].name}
-              </div>
+                salvageItemsList &&
+                salvageItems.map((salvageItem) => {
+                  return <div>{salvageItem.name}</div>
+                })
               }
-                {
-                salvageItems[1] && (
-              <div className='salvaged-items'>
-                {salvageItems[1].name}
-              </div>
-            )}
-             {
-             salvageItems[2] && (
-              <div className='salvaged-items'>
-                {salvageItems[2].name}
-              </div>
-            )}
+
             </div>
           }
           {
@@ -93,7 +88,7 @@ const MissionResults = () => {
           {
             results &&
             <div className='result-text'>Credits gained:
-              <span className='results-number'>99</span>
+              <span className='results-number'>{payment}</span>
             </div>
           }
         </div>

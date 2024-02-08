@@ -25,7 +25,7 @@ const Mission = () => {
     setTimeout(() => {
       showMissionOver(false);
       showResults(true);
-    }, 14500);
+    }, 0);
   }
 
   return (
