@@ -29,7 +29,7 @@ const MissionResults = () => {
 
   const fuelUsed = Math.round(Math.round(PLANETS[planet].distance / 8) + Math.random(Math.floor() * 6));
 
-  const healthDamage = Math.round(Math.round(PLANETS[planet].hazardLevel / 8 ) + Math.random(Math.floor() * 8))
+  const healthDamage = Math.round(Math.round(PLANETS[planet].hazardLevel / 8) + Math.random(Math.floor() * 8))
 
   const handleShowResults = () => {
     consumeFuel();
@@ -37,6 +37,15 @@ const MissionResults = () => {
     showResults(true);
     showNext(false);
     showReturnButton(true);
+  }
+
+  const handleGameOver = () => {
+    if (health < 1) {
+      window.location = "/GameOverDied";
+    } else if (fuel < 1) {
+      window.location = "/GameOverFuel";
+    } else {
+    }
   }
 
   return (
@@ -104,7 +113,7 @@ const MissionResults = () => {
         {
           returnbutton &&
           <Link to="/MainMenu"
-            className='intro-btn'>Return
+            className='intro-btn' onClick={handleGameOver}>Return
           </Link>
         }
         <div className='hud'>
