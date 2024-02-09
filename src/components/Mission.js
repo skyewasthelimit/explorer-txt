@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { useHealth, useCredits, useFuel, usePlanet, useSalvageItems } from '../contexts/GameStateContext';
 import { Link } from 'react-router-dom'
 import { PLANETS } from '../constants/planets';
+import { useNavigate } from 'react-router-dom';
 
 const Mission = () => {
+  const navigate = useNavigate();
 
   const [launch, setShowLaunch] = useState(true);
   const [missionover, showMissionOver] = useState(false);
@@ -18,7 +20,7 @@ const Mission = () => {
 
   const skipAnimation = () => {
     showMissionOver(false);
-    showResults(true);
+    navigate("/MissionResults", {replace: true})
   };
 
   const startLaunch = () => {
@@ -28,7 +30,7 @@ const Mission = () => {
 
     setTimeout(() => {
       showMissionOver(false);
-      showResults(true);
+      navigate("/MissionResults", {replace: true});
     }, 8000);
   }
   // 8000 FOR TIMER & '0' for debugging ^ (skip added for debugging)
