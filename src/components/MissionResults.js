@@ -106,14 +106,14 @@ const MissionResults = () => {
         </div>
         {
           next &&
-          <div className='mission-begin'
+          <div className='mission-next'
             onClick={handleShowResults}>Next
           </div>
         }
         {
           returnbutton &&
           <Link to="/MainMenu"
-            className='intro-btn' onClick={handleGameOver}>Return
+            className='return-btn' onClick={handleGameOver}>Return
           </Link>
         }
         <div className='hud'>

@@ -25,7 +25,7 @@ const Mission = () => {
     setTimeout(() => {
       showMissionOver(false);
       showResults(true);
-    }, 14500);
+    }, 0);
   }
   // 14500 FOR TIMER & '0' for debugging ^ (skip added for debugging)
 
@@ -39,7 +39,7 @@ const Mission = () => {
           {launch && <div className='planet-name-text'>Hazard Lvl: {PLANETS[planet].hazardLevel}</div>}
           {launch && <div className='planet-name-text'>Distance: {PLANETS[planet].distance} Light Years</div>}
           {launch && <div className='mission-name-text'>{PLANETS[planet].description}</div>}
-          {launch && <div className='mission-begin' onClick={startLaunch}>LAUNCH</div>}
+          {launch && <div className='launch-btn' onClick={startLaunch}>LAUNCH</div>}
         </div> }
 
         <div className='mission-container'>
@@ -47,7 +47,7 @@ const Mission = () => {
           {missionover && <div className='planet'></div>}
           {results && <Link to="/MissionResults" className='mission-results-btn'>Mission Results</Link>}
         </div>
-        <div className='hud-mission'>
+        <div className='hud'>
           <p className='health-bar'>✚Health: {health}</p>
           <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
