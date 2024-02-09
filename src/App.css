@@ -104,6 +104,16 @@
   .fa-space-awesome {
     margin-top: 10px !important
   }
+
+  .mission-results-btn {
+    position: absolute !important;
+    top: 2rem !important;
+    height: 32vh !important;
+    width: 70vw !important;
+    font-size: 1.2rem !important;
+    gap: 3px !important;
+    margin-bottom: 50px !important;
+  }
 }
 
 * {
@@ -509,7 +519,7 @@
   border-bottom: 0.75rem solid transparent;
   border-left: 0.75rem solid rgb(5, 255, 38);
   margin-right: 600px;
-  animation: shipflight 15s
+  animation: shipflight 8.5s
 }
 
 @keyframes shipflight {
@@ -720,6 +730,19 @@
 }
 
 .launch-btn {
+  padding: 0.625rem 1.875rem;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  font-size: 1.375rem;
+  border-radius: 7%;
+  cursor: pointer;
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid white;
+}
+
+.skip-btn {
   padding: 0.625rem 1.875rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
