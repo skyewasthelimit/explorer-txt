@@ -20,7 +20,7 @@ const MissionResults = () => {
     return item.value
   }).reduce((previous, current) => previous + current)
 
-  const consumeFuel = () => {
+  const consumeResources = () => {
     console.log(fuelUsed)
     updateFuel(-fuelUsed)
     updateCredits(payment)
@@ -32,7 +32,7 @@ const MissionResults = () => {
   const healthDamage = Math.round(Math.round(PLANETS[planet].hazardLevel / 8) + Math.random(Math.floor() * 8))
 
   const handleShowResults = () => {
-    consumeFuel();
+    consumeResources();
     showSalvageItemsList(false);
     showResults(true);
     showNext(false);
@@ -46,7 +46,9 @@ const MissionResults = () => {
       window.location = "/GameOverFuel";
     } else {
     }
-  }
+  };
+
+  handleGameOver();
 
   return (
     <div className='start-wrapper'>
@@ -113,7 +115,7 @@ const MissionResults = () => {
         {
           returnbutton &&
           <Link to="/MainMenu"
-            className='return-btn' onClick={handleGameOver}>Return
+            className='return-btn'>Return
           </Link>
         }
         <div className='hud'>

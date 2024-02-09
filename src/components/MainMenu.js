@@ -12,7 +12,7 @@ const MainMenu = () => {
   const { credits, updateCredits } = useCredits();
 
   return (
-    
+
     <div className='start-wrapper'>
       <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>

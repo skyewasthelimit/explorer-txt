@@ -14,8 +14,8 @@ const Intro = () => {
   const { credits, updateCredits } = useCredits();
 
   // const playMusic = () => {
-    // new Audio(theme).play()
-    // Audio.loop = true;
+  // new Audio(theme).play()
+  // Audio.loop = true;
   // };
 
   const handleShowText1 = () => {
@@ -28,7 +28,7 @@ const Intro = () => {
   }
 
   return (
-    
+
     <div className='start-wrapper' onClick={handleShowText1}>
       <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>

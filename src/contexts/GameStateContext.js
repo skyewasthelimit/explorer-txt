@@ -12,7 +12,7 @@ export const GameStateProvider = ({ children }) => {
   const [credits, setCredits] = useState(250);
   const [planet, setCurrentPlanet] = useState(null);
   const [salvageItems, setSalvageItems] = useState(null);
-  
+
   const updateCredits = (amount) => {
     setCredits((prevCredits) => (
       prevCredits + amount));
@@ -20,17 +20,17 @@ export const GameStateProvider = ({ children }) => {
 
   const updateHealth = (amount) => {
     setHealth((prevHealth) => (
-       prevHealth + amount));
+      prevHealth + amount));
   };
 
   const updateFuel = (amount) => {
     setFuel((prevFuel) => (
-       prevFuel + amount));
+      prevFuel + amount));
   };
 
   const updatePlanet = () => {
     setCurrentPlanet(Math.floor(Math.random() * 9));
-};
+  };
 
   const selectRandomSalvageItems = () => {
     const numberOfItems = Math.floor(Math.random() * 3)
@@ -41,10 +41,10 @@ export const GameStateProvider = ({ children }) => {
   return (
     <GameStateContext.Provider value={{
       fuel, updateFuel,
-      health, updateHealth, 
+      health, updateHealth,
       credits, updateCredits,
-      maxfuel, setMaxFuel, 
-      updatePlanet, planet, 
+      maxfuel, setMaxFuel,
+      updatePlanet, planet,
       salvageItems, selectRandomSalvageItems
     }}>
       {children}
