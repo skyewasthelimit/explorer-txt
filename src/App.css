@@ -743,6 +743,8 @@
 }
 
 .skip-btn {
+  position: absolute;
+  top: 1rem;
   padding: 0.625rem 1.875rem;
   background-color: rgb(5, 255, 38);
   font-family: monospace;
