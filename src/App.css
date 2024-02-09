@@ -50,9 +50,20 @@
     font-size: 1rem !important;
     border-right: none !important;
     white-space: normal !important;
-    margin-left: 20px !important;
-    margin-right: 10px !important;
+    margin-left: 22px !important;
+    margin-right: 16px !important;
     width: 100vw !important;
+    padding: 2px !important;
+  }
+
+  .broke-text {
+    position: absolute !important;
+    top: 1rem !important;
+    left: 15rem !important;
+    font-size: 16px !important;
+    padding: 2px !important;
+    width: 100% !important;
+    white-space: normal !important;
   }
 
   .mission-name-text {
@@ -102,7 +113,10 @@
 }
 
 .main {
-  background-color: rgb(54, 54, 54);
+  background-image: -moz-linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  background-image:-o-linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  background-image: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  background-image:-webkit-linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -368,6 +382,8 @@
 }
 
 .broke-text {
+  top: 21rem;
+  position: absolute;
   color: rgb(5, 255, 38);
   font-family: monospace;
   font-size: 20px;
@@ -386,7 +402,7 @@
   }
 
   to {
-    width: 54%
+    width: 52%
   }
 }
 
@@ -453,7 +469,7 @@
   }
 
   to {
-    width: 63%
+    width: 64%
   }
 }
 
