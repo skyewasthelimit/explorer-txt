@@ -22,6 +22,7 @@ function Explorer() {
 
     <GameStateProvider>
       <div className="main">
+        <img className="space-bg" src="/images/space_bg.jpg" alt="space"></img>
         <div>
           <Routes>
             <Route path="/" element={<Start />} />
