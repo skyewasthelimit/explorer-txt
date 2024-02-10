@@ -3,8 +3,11 @@ import { useHealth, useCredits, useFuel, usePlanet, useSalvageItems } from '../c
 import { Link } from 'react-router-dom'
 import { PLANETS } from '../constants/planets';
 import { SALVAGE_ITEMS } from '../constants/salvageItems';
+import { useNavigate } from 'react-router-dom';
 
 const MissionResults = () => {
+  const navigate = useNavigate();
+
   const [salvageItemsList, showSalvageItemsList] = useState(true)
   const [results, showResults] = useState(false)
   const [returnbutton, showReturnButton] = useState(false)
@@ -41,9 +44,9 @@ const MissionResults = () => {
 
   const handleGameOver = () => {
     if (health < 1) {
-      window.location = "/GameOverDied";
+      navigate("/GameOverDied", { replace: true });
     } else if (fuel < 1) {
-      window.location = "/GameOverFuel";
+      navigate("/GameOverFuel", { replace: true });
     } else {
     }
   };
@@ -77,19 +80,19 @@ const MissionResults = () => {
           {
             results &&
             <div className='result-text'>Salvage Items Found:
-              <span className='results-number'>{salvageItems.length}</span>
+              <span className='results-number'>{salvageItems.length} Items</span>
             </div>
           }
           {
             results &&
             <div className='result-text'>Fuel used:
-              <span className='results-number'>{fuelUsed}</span>
+              <span className='results-number'>{fuelUsed} Units</span>
             </div>
           }
           {
             results &&
             <div className='result-text'>Damage taken:
-              <span className='results-number'>{healthDamage}</span>
+              <span className='results-number'>{healthDamage} HP</span>
             </div>
           }
           {
@@ -102,7 +105,7 @@ const MissionResults = () => {
           {
             results &&
             <div className='result-text'>Credits gained:
-              <span className='results-number'>{payment}</span>
+              <span className='results-number'>${payment}</span>
             </div>
           }
         </div>

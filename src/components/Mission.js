@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import { useHealth, useCredits, useFuel, usePlanet, useSalvageItems } from '../contexts/GameStateContext';
-import { Link } from 'react-router-dom'
-import { PLANETS } from '../constants/planets';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useHealth, useCredits, useFuel, usePlanet, useSalvageItems } from '../contexts/GameStateContext';
+import { Link } from 'react-router-dom';
+import { PLANETS } from '../constants/planets';
 
 const Mission = () => {
   const navigate = useNavigate();
+  const missionTimeout = useRef(null);
 
   const [launch, setShowLaunch] = useState(true);
   const [missionover, showMissionOver] = useState(false);
@@ -17,10 +18,10 @@ const Mission = () => {
   const { planet, updatePlanet } = usePlanet();
   const { salvageItems, selectRandomSalvageItems } = useSalvageItems();
 
-
   const skipAnimation = () => {
+    clearTimeout(missionTimeout.current);
     showMissionOver(false);
-    navigate("/MissionResults", {replace: true})
+    navigate("/MissionResults", { replace: true });
   };
 
   const startLaunch = () => {
@@ -28,12 +29,11 @@ const Mission = () => {
     setShowLaunch(false);
     selectRandomSalvageItems();
 
-    setTimeout(() => {
+    missionTimeout.current = setTimeout(() => {
       showMissionOver(false);
-      navigate("/MissionResults", {replace: true});
+      navigate("/MissionResults", { replace: true });
     }, 8000);
-  }
-  // 8000 FOR TIMER & '0' for debugging ^ (skip added for debugging)
+  };
 
   return (
     <div className='start-wrapper'>
@@ -60,7 +60,7 @@ const Mission = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Mission
+export default Mission;

@@ -28,7 +28,7 @@ const Ship = () => {
       <div className='start'>
         {shipintrotext && <div class="ship-text1">Welcome to the ship console - Would you like to refuel?</div>}
         <div className='intro-choices'>
-          <button className='intro-btn' onClick={addFuel}>Refuel</button>
+          <button className='intro-btn' onClick={addFuel}>Refuel? $30</button>
           <Link to="/Station" className='intro-btn'>Go to Station</Link>
           <Link to="/Salvage" className='intro-btn'>Go Salvage</Link>
         </div>

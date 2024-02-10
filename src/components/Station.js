@@ -28,7 +28,7 @@ const Station = () => {
       <div className='start'>
         {stationintrotext && <div class="station-text1">The station has an infirmary - Would you like healing?</div>}
         <div className='intro-choices'>
-          <button className='intro-btn' onClick={addHealth}>Heal</button>
+          <button className='intro-btn' onClick={addHealth}>Heal? $20</button>
           <Link to="/Ship" className='intro-btn'>Go to Ship</Link>
           <Link to="/Salvage" className='intro-btn'>Go Salvage</Link>
         </div>
