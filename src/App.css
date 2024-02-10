@@ -524,13 +524,13 @@
   display: flex;
 }
 
+.explorer-ship {
+  height: 65%;
+  width: 65%;
+}
+
 .ship {
   position: relative;
-  width: 0;
-  height: 0;
-  border-top: 0.75rem solid transparent;
-  border-bottom: 0.75rem solid transparent;
-  border-left: 0.75rem solid rgb(5, 255, 38);
   margin-right: 600px;
   animation: shipflight 8.5s
 }
@@ -539,11 +539,13 @@
   0% {
     margin-right: 600px
   }
-
+  40% {
+    transform: scaleX(1);
+  }
   50% {
     margin-right: -500px;
+    transform: scaleX(-1);
   }
-
   100% {
     margin-right: 600px;
     transform: scaleX(-1);

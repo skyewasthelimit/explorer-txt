@@ -49,7 +49,7 @@ const Mission = () => {
         </div>}
         {missionover && <div className='skip-btn' onClick={skipAnimation}>Skip →</div>}
         <div className='mission-container'>
-          {missionover && <div className='ship'></div>}
+          {missionover && <div className='ship'><img className="explorer-ship" src="images\explorer_ship.png"></img></div>}
           {missionover && <div className='planet'></div>}
           {results && <Link to="/MissionResults" className='mission-results-btn'>Mission Results</Link>}
         </div>
