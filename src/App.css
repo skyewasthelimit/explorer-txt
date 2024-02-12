@@ -905,4 +905,18 @@ a:visited {
   margin-bottom: 40px;
   font-size: 3rem;
   font-family: monospace;
+  animation-duration: infinite;
+  animation: bubbleheader 2s infinite;
+}
+
+@keyframes bubbleheader {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
