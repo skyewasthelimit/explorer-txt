@@ -6,6 +6,21 @@
     overflow: hidden !important;
   }
 
+  .settings-dropdown {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .settings-toggle {
+    font-size: 1.28rem !important;
+    background-color: rgb(5, 255, 38) !important;
+    font-family: monospace !important;
+    padding: 2px !important;
+    position: absolute !important;
+    left: 108% !important;
+    top: 60% !important;
+  }
+
   .start-wrapper {
     margin-top: 30px !important;
     justify-content: flex-start !important;
@@ -26,16 +41,14 @@
   .hud-mission {
     position: absolute !important;
     display: flex !important;
-    ;
     align-items: center !important;
-    ;
     justify-content: center !important;
-    ;
     flex-direction: column !important;
     top: 26rem !important;
   }
 
   .intro-choices {
+    position: absolute;
     display: flex !important;
     flex-direction: column !important;
     text-align: center !important;
@@ -48,15 +61,23 @@
   .mission-confirm-text,
   .ship-text1,
   .station-text1 {
+    position: absolute !important;
+    top: 100px !important;
     display: flex !important;
     justify-content: center !important;
+    align-items: center !important;
     font-size: 1rem !important;
     border-right: none !important;
     white-space: normal !important;
     margin-left: 22px !important;
     margin-right: 16px !important;
-    width: 100vw !important;
+    width: 99vw !important;
     padding: 2px !important;
+  }
+
+  .mission-btn {
+    position: absolute !important;
+    top: 100px !important;
   }
 
   .broke-text {
@@ -107,6 +128,8 @@
   .fa-space-awesome {
     margin-top: 10px !important
   }
+
+  .settings-toggle {}
 
   .mission-results-btn {
     position: absolute !important;
@@ -179,6 +202,10 @@
   cursor: pointer;
 }
 
+#start-btn:hover {
+  background-color: darkseagreen;
+}
+
 .level-text {
   color: rgb(5, 255, 38);
   font-family: monospace;
@@ -189,6 +216,7 @@
   animation: typing 2s steps(20, end) forwards;
   font-size: 20px;
   width: 0;
+  margin-top: 30px;
 }
 
 .retro-overlay {
@@ -198,6 +226,7 @@
   transform: scaleY(1.03);
   filter: blur(0.2px);
   pointer-events: none;
+  z-index: 2;
 }
 
 @keyframes typing {
@@ -210,24 +239,25 @@
   }
 }
 
-.fa-spinner {
+.loading-text {
   color: rgb(5, 255, 38);
-  font-size: 30px;
-  padding: 10px;
-  animation: spinner 2s linear infinite;
+  font-family: monospace;
+  font-size: 1.25rem;
+  overflow: hidden;
+  border-right: .65em solid rgb(5, 255, 38);
+  white-space: nowrap;
+  animation: loading 4.5s steps(20, end) forwards;
+  font-size: 20px;
+  width: 0;
 }
 
-@keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    transform: rotate(0);
+@keyframes loading {
+  from {
+    width: 0
   }
 
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    transform: rotate(360deg);
+  to {
+    width: 100%
   }
 }
 
@@ -241,6 +271,7 @@
   animation: typing1 2s steps(20, end) forwards;
   font-size: 20px;
   width: 0;
+  margin-top: 30px;
 }
 
 @keyframes typing1 {
@@ -539,13 +570,16 @@
   0% {
     margin-right: 600px
   }
+
   40% {
     transform: scaleX(1);
   }
+
   50% {
     margin-right: -500px;
     transform: scaleX(-1);
   }
+
   100% {
     margin-right: 600px;
     transform: scaleX(-1);
@@ -791,4 +825,84 @@
   opacity: 60%;
   filter: blur(0.6px);
   overflow: hidden;
+}
+
+.settings-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10%;
+}
+
+.settings-wrapper2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10%;
+}
+
+.settings-dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(14, 184, 37);
+  height: 100%;
+  width: 100%;
+  font-size: 1.375rem;
+  z-index: 1;
+  border-radius: 10%;
+}
+
+.settings-toggle {
+  font-size: 1.58rem;
+  background-color: rgb(5, 255, 38);
+  font-family: monospace;
+  padding: 0.20rem 0.25rem;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+
+.settings-toggle:active {
+  background-color: rgb(241, 22, 22);
+}
+
+.settings-toggle:hover {
+  background-color: seagreen;
+  cursor: pointer;
+}
+
+.settings-text {
+  font-size: 1.58rem;
+  font-family: monospace;
+  margin-left: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.settings-text:hover {
+  color: rgb(71, 248, 94);
+}
+
+.settings-header {
+  margin-bottom: 40px;
+  font-size: 3rem;
+  font-family: monospace;
 }

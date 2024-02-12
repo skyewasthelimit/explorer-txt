@@ -10,6 +10,7 @@ import MissionResults from './components/MissionResults'
 import MainMenu from './components/MainMenu';
 import GameOverDied from './components/GameOverDied';
 import GameOverFuel from './components/GameOverFuel';
+import Settings from './components/Settings';
 
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -35,6 +36,7 @@ function Explorer() {
             <Route path="/MainMenu" element={<MainMenu />} />
             <Route path="/GameOverDied" element={<GameOverDied />} />
             <Route path="/GameOverFuel" element={<GameOverFuel />} />
+            <Route path="/Settings" element={<Settings />} />
           </Routes>
         </div>
       </div>

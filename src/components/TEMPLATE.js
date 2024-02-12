@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHealth, useCredits, useFuel, usePlanet } from '../contexts/GameStateContext';
 import { Link } from 'react-router-dom'
 import { PLANETS } from '../constants/planets';
+import Settings from './Settings';
 
 const Component = () => {
 

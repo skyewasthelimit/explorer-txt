@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { PLANETS } from '../constants/planets';
 import { SALVAGE_ITEMS } from '../constants/salvageItems';
 import { useNavigate } from 'react-router-dom';
+import Settings from './Settings';
 
 const MissionResults = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const MissionResults = () => {
   const [results, showResults] = useState(false)
   const [returnbutton, showReturnButton] = useState(false)
   const [next, showNext] = useState(true)
+  const [showMenu, setShowMenu] = useState(false);
 
   const { health, updateHealth } = useHealth();
   const { fuel, updateFuel } = useFuel();
@@ -51,10 +53,15 @@ const MissionResults = () => {
     }
   };
 
+  const handleMenuOpen = () => {
+    setShowMenu(!showMenu);
+  }
+
   handleGameOver();
 
   return (
     <div className='start-wrapper'>
+         {showMenu && <div className='settings-wrapper2' onClick={handleMenuOpen}><Settings /></div>}
       <img className="retro-overlay" src="/images/retro_overlay.png"
         alt="Retro Overlay" />
       <div className='start'>
@@ -125,6 +132,7 @@ const MissionResults = () => {
           <p className='health-bar'>✚Health: {health}</p>
           <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
+          <div className='settings-toggle' onClick={handleMenuOpen}>Menu</div>
         </div>
       </div>
     </div>

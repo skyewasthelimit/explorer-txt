@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useHealth, useCredits, useFuel } from '../contexts/GameStateContext';
 import { Link } from 'react-router-dom'
+import Settings from './Settings';
 
 const Ship = () => {
   const [shipintrotext, showShipIntroText] = useState(true);
   const [broke, showBroke] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const { health, updateHealth } = useHealth();
   const { fuel, updateFuel } = useFuel();
@@ -22,8 +24,13 @@ const Ship = () => {
     }
   };
 
+  const handleMenuOpen = () => {
+    setShowMenu(!showMenu);
+  }
+
   return (
     <div className='start-wrapper'>
+      {showMenu && <div className='settings-wrapper2' onClick={handleMenuOpen}><Settings /></div>}
       <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
         {shipintrotext && <div class="ship-text1">Welcome to the ship console - Would you like to refuel?</div>}
@@ -36,6 +43,7 @@ const Ship = () => {
           <p className='health-bar'>✚Health: {health}</p>
           <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
+          <div className='settings-toggle' onClick={handleMenuOpen}>Menu</div>
         </div>
         {broke && <div class="broke-text">Not enough credits - Come back later.</div>}
       </div>
