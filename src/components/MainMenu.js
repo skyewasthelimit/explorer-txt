@@ -20,14 +20,30 @@ const MainMenu = () => {
   return (
 
     <div className='start-wrapper'>
-      {showMenu && <div className='settings-wrapper2' onClick={handleMenuOpen}><Settings /></div>}
-      <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
+      {
+        showMenu && <div className='settings-wrapper2'
+          onClick={handleMenuOpen}><Settings /></div>
+      }
+      <img className="retro-overlay" src="/images/retro_overlay.png"
+        alt="Retro Overlay" />
       <div className='start'>
-        {introtext && <div class="menu-text">Welcome back, Explorer. How can we help you?</div>}
+        {
+          introtext && <div class="menu-text">
+            Welcome back, Explorer. How can we help you?</div>
+        }
         <div className='intro-choices'>
-          {introbutton && <Link to="/Ship" className='intro-btn'>Go to Ship</Link>}
-          {introbutton && <Link to="/Station" className='intro-btn'>Go to Station</Link>}
-          {introbutton && <Link to="/Salvage" className='intro-btn'>Go Salvage</Link>}
+          {
+            introbutton && <Link to="/Ship" className='intro-btn'>
+              Go to Ship</Link>
+          }
+          {
+            introbutton && <Link to="/Station" className='intro-btn'>
+              Go to Station</Link>
+          }
+          {
+            introbutton && <Link to="/Salvage" className='intro-btn'>
+              Go Salvage</Link>
+          }
         </div>
         <div className='hud'>
           <p className='health-bar'>✚Health: {health}</p>

@@ -32,9 +32,11 @@ const MissionResults = () => {
     updateHealth(-healthDamage)
   }
 
-  const fuelUsed = Math.round(Math.round(PLANETS[planet].distance / 8) + Math.random(Math.floor() * 6));
+  const fuelUsed = Math.round(Math.round(PLANETS[planet].distance / 8)
+   + Math.random(Math.floor() * 6));
 
-  const healthDamage = Math.round(Math.round(PLANETS[planet].hazardLevel / 8) + Math.random(Math.floor() * 8))
+  const healthDamage = Math.round(Math.round(PLANETS[planet].hazardLevel / 8)
+   + Math.random(Math.floor() * 8))
 
   const handleShowResults = () => {
     consumeResources();
@@ -61,7 +63,10 @@ const MissionResults = () => {
 
   return (
     <div className='start-wrapper'>
-         {showMenu && <div className='settings-wrapper2' onClick={handleMenuOpen}><Settings /></div>}
+         {
+         showMenu && <div className='settings-wrapper2' 
+         onClick={handleMenuOpen}><Settings /></div>
+         }
       <img className="retro-overlay" src="/images/retro_overlay.png"
         alt="Retro Overlay" />
       <div className='start'>
@@ -87,32 +92,42 @@ const MissionResults = () => {
           {
             results &&
             <div className='result-text'>Salvage Items Found:
-              <span className='results-number'>{salvageItems.length} Items</span>
+              <span className='results-number'>
+                {salvageItems.length} Items
+                </span>
             </div>
           }
           {
             results &&
             <div className='result-text'>Fuel used:
-              <span className='results-number'>{fuelUsed} Units</span>
+              <span className='results-number'>
+                {fuelUsed} Units
+                </span>
             </div>
           }
           {
             results &&
             <div className='result-text'>Damage taken:
-              <span className='results-number'>{healthDamage} HP</span>
+              <span className='results-number'>
+                {healthDamage} HP
+                </span>
             </div>
           }
           {
             results &&
             <div className='result-text'>Distance travelled:
-              <span className='results-number'>{PLANETS[planet].distance}
-                &nbsp;Light Years</span>
+              <span className='results-number'>
+                {PLANETS[planet].distance}
+                &nbsp;Light Years
+                </span>
             </div>
           }
           {
             results &&
             <div className='result-text'>Credits gained:
-              <span className='results-number'>${payment}</span>
+              <span className='results-number'>
+                ${payment}
+                </span>
             </div>
           }
         </div>
@@ -132,7 +147,8 @@ const MissionResults = () => {
           <p className='health-bar'>✚Health: {health}</p>
           <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
-          <div className='settings-toggle' onClick={handleMenuOpen}>Menu</div>
+          <div className='settings-toggle' 
+          onClick={handleMenuOpen}>Menu</div>
         </div>
       </div>
     </div>

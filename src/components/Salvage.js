@@ -39,31 +39,47 @@ const Salvage = () => {
 
   return (
     <div className='start-wrapper'>
-         {showMenu && <div className='settings-wrapper2' onClick={handleMenuOpen}><Settings /></div>}
+      {
+        showMenu && <div className='settings-wrapper2'
+          onClick={handleMenuOpen}><Settings /></div>
+      }
       <img className="retro-overlay"
         src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
 
-        {confirmtext && <div className="mission-confirm-text">
-          Are you sure you wish to begin salvage mission?</div>}
-        {confirmbutton && <Link to="/Mission"
-          className='mission-confirm-btn1'>Yes</Link>}
-        {confirmbutton && <div className='mission-confirm-btn2'
-          onClick={denyMission}>Go Back</div>}
-        {missionbuttons && <div className='mission-btn'
-          onClick={confirmMission}>Begin Mission</div>}
+        {
+          confirmtext && <div className="mission-confirm-text">
+            Are you sure you wish to begin salvage mission?</div>
+        }
+        {
+          confirmbutton && <Link to="/Mission"
+            className='mission-confirm-btn1'>Yes</Link>
+        }
+        {
+          confirmbutton && <div className='mission-confirm-btn2'
+            onClick={denyMission}>Go Back</div>
+        }
+        {
+          missionbuttons && <div className='mission-btn'
+            onClick={confirmMission}>Begin Mission</div>
+        }
         <div className='intro-choices'>
-          {missionbuttons && <Link to="/Ship" className='intro-btn'>
-            Go to Ship</Link>}
-          {missionbuttons && <Link to="/Station" className='intro-btn'>
-            Go to Station</Link>}
+          {
+            missionbuttons && <Link to="/Ship" className='intro-btn'>
+              Go to Ship</Link>
+          }
+          {
+            missionbuttons && <Link to="/Station" className='intro-btn'>
+              Go to Station</Link>
+          }
         </div>
 
         <div className='hud'>
           <p className='health-bar'>✚Health: {health}</p>
           <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
-          <div className='settings-toggle' onClick={handleMenuOpen}>Menu</div>
+          <div className='settings-toggle'
+            onClick={handleMenuOpen}>Menu</div>
         </div>
       </div>
     </div>

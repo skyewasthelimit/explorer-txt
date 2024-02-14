@@ -24,14 +24,19 @@ const Start = () => {
 
   return (
     <div className='start-wrapper'>
-      <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
+      <img className="retro-overlay" src="/images/retro_overlay.png"
+        alt="Retro Overlay" />
       <div className='start'>
-        {buttonVisible && <div id='start-btn' onClick={hideButton}>Start</div>}
-        {loading && 
-        <div className='loading-wrapper'>
-        <div className='loading-text'>Loading...</div>
-        <div className='loading-block'></div>
-        </div>
+        {
+          buttonVisible && <div id='start-btn'
+            onClick={hideButton}>Start</div>
+        }
+        {
+          loading &&
+          <div className='loading-wrapper'>
+            <div className='loading-text'>Loading...</div>
+            <div className='loading-block'></div>
+          </div>
         }
       </div>
     </div>

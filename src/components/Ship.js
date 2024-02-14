@@ -30,12 +30,19 @@ const Ship = () => {
 
   return (
     <div className='start-wrapper'>
-      {showMenu && <div className='settings-wrapper2' onClick={handleMenuOpen}><Settings /></div>}
+      {
+        showMenu && <div className='settings-wrapper2'
+          onClick={handleMenuOpen}><Settings /></div>
+      }
       <img className="retro-overlay" src="/images/retro_overlay.png" alt="Retro Overlay" />
       <div className='start'>
-        {shipintrotext && <div class="ship-text1">Welcome to the ship console - Would you like to refuel?</div>}
+        {
+          shipintrotext && <div class="ship-text1">
+            Welcome to the ship console - Would you like to refuel?</div>
+        }
         <div className='intro-choices'>
-          <button className='intro-btn' onClick={addFuel}>Refuel? $30</button>
+          <button className='intro-btn'
+            onClick={addFuel}>Refuel? $30</button>
           <Link to="/Station" className='intro-btn'>Go to Station</Link>
           <Link to="/Salvage" className='intro-btn'>Go Salvage</Link>
         </div>
@@ -43,9 +50,13 @@ const Ship = () => {
           <p className='health-bar'>✚Health: {health}</p>
           <i className="fa-brands fa-space-awesome">{fuel}%</i>
           <p className="credits-bar">${credits}</p>
-          <div className='settings-toggle' onClick={handleMenuOpen}>Menu</div>
+          <div className='settings-toggle'
+            onClick={handleMenuOpen}>Menu</div>
         </div>
-        {broke && <div class="broke-text">Not enough credits - Come back later.</div>}
+        {
+          broke && <div class="broke-text">
+            Not enough credits - Come back later.</div>
+        }
       </div>
     </div >
   )
