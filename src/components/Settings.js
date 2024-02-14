@@ -11,7 +11,7 @@ const Settings = () => {
         <div className='settings-text'>Blog</div>
         <div className='settings-text'>Stats</div>
         <div className='settings-text'>Donate</div>
-        <div className='settings-text'>About</div>
+        <Link to="/About"><div className='settings-text'>About</div></Link>
         <Link to="/"><div className='settings-text'>Restart</div></Link>
         <div className='settings-text'>Back</div>
       </div>

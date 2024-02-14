@@ -148,6 +148,10 @@
     width: 80% !important;
     margin-bottom: auto !important;
   }
+
+  .about-text {
+    width: 90vw;
+  }
 }
 
 * {
@@ -845,6 +849,7 @@
   align-items: center;
   flex-direction: column;
   border-radius: 10%;
+  cursor: pointer;
 }
 
 .settings-dropdown {
@@ -917,4 +922,31 @@ a:visited {
   100% {
     transform: scale(1);
   }
+}
+
+.about-dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(14, 184, 37);
+  height: 100%;
+  width: 100%;
+  font-size: 1.375rem;
+  z-index: 1;
+  border-radius: 10%;
+}
+
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-radius: 10%;
+}
+
+.about-text {
+  margin: 40px;
 }
