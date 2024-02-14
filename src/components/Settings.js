@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Settings = () => {
-  const [menuVisible, closeMenuVisible] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <div className='settings-wrapper'>
@@ -14,7 +12,7 @@ const Settings = () => {
         <div className='settings-text'>Stats</div>
         <div className='settings-text'>Donate</div>
         <div className='settings-text'>About</div>
-        <div className='settings-text'>Restart</div>
+        <Link to="/"><div className='settings-text'>Restart</div></Link>
         <div className='settings-text'>Back</div>
       </div>
     </div>

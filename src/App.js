@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Start from './components/Start';
 import Intro from './components/Intro';
 import Ship from './components/Ship';
@@ -11,8 +11,7 @@ import MainMenu from './components/MainMenu';
 import GameOverDied from './components/GameOverDied';
 import GameOverFuel from './components/GameOverFuel';
 import Settings from './components/Settings';
-
-import { Link } from 'react-router-dom';
+import About from './components/About';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { GameStateProvider } from './contexts/GameStateContext';
 
@@ -37,6 +36,7 @@ function Explorer() {
             <Route path="/GameOverDied" element={<GameOverDied />} />
             <Route path="/GameOverFuel" element={<GameOverFuel />} />
             <Route path="/Settings" element={<Settings />} />
+            <Route path="/About" element={<About />} />
           </Routes>
         </div>
       </div>
